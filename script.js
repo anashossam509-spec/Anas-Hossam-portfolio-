@@ -319,6 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.addEventListener('click', function() { dropdownMenu.classList.remove('show'); });
 
+    // ===== CONTACT FORM (English messages) =====
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
     if (form) {
@@ -328,11 +329,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
             if (!name || !email || !message) {
-                status.textContent = '⚠️ من فضلك املأ جميع الحقول المطلوبة.';
+                status.textContent = '⚠️ Please fill in all required fields.';
                 status.style.color = '#f39c12';
                 return;
             }
-            status.textContent = '⏳ جاري الإرسال...';
+            status.textContent = '⏳ Sending...';
             status.style.color = '#a78bfa';
             const formData = new FormData(form);
             fetch('https://formspree.io/f/mbgrnopd', {
@@ -341,18 +342,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    status.innerHTML = '✅ تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.';
+                    status.innerHTML = '✅ Message sent successfully! I\'ll get back to you soon.';
                     status.style.color = '#2ecc71';
                     form.reset();
                 } else {
-                    status.textContent = '❌ حدث خطأ، حاول مرة أخرى.';
+                    status.textContent = '❌ Something went wrong. Please try again.';
                     status.style.color = '#e74c3c';
                 }
             }).catch(error => {
-                status.textContent = '❌ مشكلة في الشبكة، تأكد من اتصالك.';
+                status.textContent = '❌ Network error. Please check your connection.';
                 status.style.color = '#e74c3c';
             });
         });
     }
-    translate('ar');
+
+    // ===== اللغة الافتراضية: الإنجليزية =====
+    translate('en');
 });

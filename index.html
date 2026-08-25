@@ -16,18 +16,33 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background: linear-gradient(145deg, #0b0e1a 0%, #1a1f2f 100%); min-height: 100vh; padding: 2rem 1rem; }
         .container { max-width: 950px; margin: auto; background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); border-radius: 56px; padding: 2.8rem 2.5rem; box-shadow: 0 25px 50px -8px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.03); }
+        
+        /* Language Dropdown */
         .lang-toggle { display: flex; justify-content: flex-end; margin-bottom: 2rem; }
+        .lang-dropdown { position: relative; display: inline-block; }
         .lang-btn { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: #d3d9f0; padding: 0.6rem 1.5rem; border-radius: 40px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: 0.3s; display: flex; align-items: center; gap: 0.5rem; }
         .lang-btn:hover { background: rgba(255,255,255,0.12); border-color: #8f73ff; }
         .lang-btn i { font-size: 1.1rem; }
+        
+        .dropdown-content { display: none; position: absolute; right: 0; background: rgba(26,31,47,0.95); backdrop-filter: blur(12px); min-width: 160px; border-radius: 16px; padding: 0.5rem; margin-top: 0.5rem; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 20px 40px rgba(0,0,0,0.6); z-index: 1000; }
+        .dropdown-content.show { display: block; }
+        .dropdown-content a { display: block; padding: 0.6rem 1rem; color: #d3d9f0; text-decoration: none; border-radius: 10px; transition: 0.3s; font-size: 0.9rem; }
+        .dropdown-content a:hover { background: rgba(106,79,224,0.2); color: #b6a5ff; }
+        .dropdown-content a.active { background: rgba(106,79,224,0.3); color: #8f73ff; }
+        
+        /* Header */
         .header { text-align: center; margin-bottom: 3rem; }
         .header h1 { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #f0e9ff 0%, #b6a5ff 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .header .subtitle { color: #a8b2d9; font-size: 1.2rem; margin-top: 0.3rem; }
         .header .badge { display: inline-block; background: linear-gradient(135deg, #6a4fe0, #8f73ff); padding: 0.3rem 1.5rem; border-radius: 40px; color: white; font-size: 0.9rem; margin-top: 0.8rem; }
+        
+        /* About */
         .about { background: rgba(255,255,255,0.03); border-radius: 24px; padding: 2rem; margin-bottom: 2.5rem; border: 1px solid rgba(255,255,255,0.05); }
         .about h2 { color: #f0f2ff; font-size: 1.8rem; margin-bottom: 1rem; }
         .about h2 i { color: #8f73ff; margin-right: 0.5rem; }
         .about p { color: #d3d9f0; line-height: 1.8; font-size: 1.05rem; }
+        
+        /* Skills */
         .skills { margin-bottom: 2.5rem; }
         .skills h2 { color: #f0f2ff; font-size: 1.8rem; margin-bottom: 1.2rem; }
         .skills h2 i { color: #8f73ff; margin-right: 0.5rem; }
@@ -37,6 +52,8 @@
         .skill-card i { font-size: 2.5rem; color: #8f73ff; display: block; margin-bottom: 0.5rem; }
         .skill-card span { color: #e8eaff; font-weight: 600; }
         .skill-card .level { display: block; color: #7a84a8; font-size: 0.8rem; margin-top: 0.3rem; }
+        
+        /* Services */
         .services { margin-bottom: 2.5rem; }
         .services h2 { color: #f0f2ff; font-size: 1.8rem; margin-bottom: 1.2rem; }
         .services h2 i { color: #8f73ff; margin-right: 0.5rem; }
@@ -46,6 +63,8 @@
         .service-card i { font-size: 2rem; color: #8f73ff; margin-bottom: 0.5rem; }
         .service-card h3 { color: #e8eaff; font-size: 1.1rem; margin-bottom: 0.3rem; }
         .service-card p { color: #a8b2d9; font-size: 0.9rem; }
+        
+        /* Projects */
         .projects { margin-bottom: 2.5rem; }
         .projects h2 { color: #f0f2ff; font-size: 1.8rem; margin-bottom: 1.2rem; }
         .projects h2 i { color: #8f73ff; margin-right: 0.5rem; }
@@ -58,30 +77,81 @@
         .project-card .project-info p { color: #a8b2d9; font-size: 0.85rem; }
         .project-card .project-info .tags { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
         .project-card .project-info .tags span { background: rgba(106,79,224,0.2); padding: 0.2rem 0.8rem; border-radius: 40px; color: #b6a5ff; font-size: 0.7rem; }
-        .contact { margin-bottom: 1.5rem; }
-        .contact h2 { color: #f0f2ff; font-size: 1.8rem; margin-bottom: 1.2rem; }
-        .contact h2 i { color: #8f73ff; margin-right: 0.5rem; }
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; }
-        .contact-card { background: rgba(255,255,255,0.03); padding: 1.2rem; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
-        .contact-card:hover { background: rgba(255,255,255,0.06); transform: translateY(-3px); }
-        .contact-card i { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
-        .contact-card .fa-whatsapp { color: #25D366; }
-        .contact-card .fa-envelope { color: #EA4335; }
-        .contact-card .fa-instagram { color: #E4405F; }
-        .contact-card .fa-phone-alt { color: #4CAF50; }
-        .contact-card h4 { color: #e8eaff; font-size: 0.95rem; }
-        .contact-card p { color: #a8b2d9; font-size: 0.8rem; margin: 0.3rem 0 0.5rem; }
-        .contact-card a { display: inline-block; padding: 0.4rem 1.2rem; border-radius: 40px; text-decoration: none; font-size: 0.8rem; font-weight: 600; color: white; transition: 0.3s; }
-        .contact-card a:hover { transform: scale(1.05); }
-        .whatsapp-link { background: #25D366; }
-        .email-link { background: #EA4335; }
-        .insta-link { background: radial-gradient(circle at 30% 30%, #feda77, #d62976, #962fbf, #4f5bd5); }
-        .call-link { background: #4CAF50; }
-        .btn-cta { display: inline-block; padding: 0.9rem 2.5rem; background: linear-gradient(135deg, #6a4fe0, #8f73ff); color: white; border-radius: 60px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: 0.3s; border: none; cursor: pointer; margin-top: 0.5rem; }
-        .btn-cta:hover { transform: scale(1.03); box-shadow: 0 10px 28px rgba(106,79,224,0.4); }
+        
+        /* ===== CONTACT PRO ===== */
+        .contact-pro {
+            margin-bottom: 2.5rem;
+        }
+        .contact-pro h2 {
+            color: #f0f2ff;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .contact-pro h2 i {
+            color: #8f73ff;
+            margin-right: 0.5rem;
+        }
+        .contact-pro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .contact-info {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.8rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .info-item i {
+            font-size: 1.4rem;
+            margin-top: 0.2rem;
+            min-width: 2rem;
+        }
+        .info-item h4 {
+            color: #e8eaff;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        .info-item p {
+            color: #a8b2d9;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .contact-form {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.8rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #8f73ff;
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .contact-form button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 28px rgba(106, 79, 224, 0.4);
+        }
+        #formStatus {
+            color: #8f73ff;
+        }
+        @media (max-width: 768px) {
+            .contact-pro-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .divider { display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0; color: #7a84a8; }
         .divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
         .footer { text-align: center; color: #7a84a8; font-size: 0.85rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        
         @media (max-width: 768px) { .container { padding: 1.5rem; } .header h1 { font-size: 2.5rem; } }
         .rtl { direction: rtl; }
         .rtl .header h1 { font-size: 2.8rem; }
@@ -92,24 +162,38 @@
 
     <div class="container">
 
+        <!-- LANGUAGE DROPDOWN -->
         <div class="lang-toggle">
-            <button class="lang-btn" id="langToggle">
-                <i class="fas fa-globe"></i>
-                <span id="langText">العربية</span>
-            </button>
+            <div class="lang-dropdown">
+                <button class="lang-btn" id="langToggle">
+                    <i class="fas fa-globe"></i>
+                    <span id="langText">🌍 اللغة</span>
+                    <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.5rem;"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownMenu">
+                    <a href="#" data-lang="ar">🇪🇬 العربية</a>
+                    <a href="#" data-lang="en">🇬🇧 English</a>
+                    <a href="#" data-lang="fr">🇫🇷 Français</a>
+                    <a href="#" data-lang="de">🇩🇪 Deutsch</a>
+                    <a href="#" data-lang="es">🇪🇸 Español</a>
+                </div>
+            </div>
         </div>
 
+        <!-- HEADER -->
         <div class="header">
             <h1>👋 Anas Hossam</h1>
             <p class="subtitle">Building modern, fast & responsive websites</p>
             <span class="badge">🚀 Available for Freelance</span>
         </div>
 
+        <!-- ABOUT -->
         <div class="about">
             <h2><i class="fas fa-user"></i> <span class="about-title" id="aboutTitle">About Me</span></h2>
             <p class="about-text" id="aboutText">I'm a passionate web developer who loves creating beautiful, fast, and responsive websites. I use <strong>HTML & CSS</strong> to turn ideas into real digital experiences. My goal is to keep learning, build amazing projects, and grow as a freelancer.</p>
         </div>
 
+        <!-- SKILLS -->
         <div class="skills">
             <h2><i class="fas fa-code"></i> <span class="skills-title" id="skillsTitle">My Skills</span></h2>
             <div class="skills-grid">
@@ -121,6 +205,7 @@
             </div>
         </div>
 
+        <!-- SERVICES -->
         <div class="services">
             <h2><i class="fas fa-cogs"></i> <span class="services-title" id="servicesTitle">My Services</span></h2>
             <div class="services-grid">
@@ -142,6 +227,7 @@
             </div>
         </div>
 
+        <!-- PROJECTS -->
         <div class="projects">
             <h2><i class="fas fa-folder-open"></i> <span class="projects-title" id="projectsTitle">My Projects</span></h2>
             <div class="projects-grid">
@@ -172,38 +258,65 @@
             </div>
         </div>
 
-        <div class="contact">
-            <h2><i class="fas fa-phone-alt"></i> <span class="contact-title" id="contactTitle">Contact Me</span></h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <i class="fab fa-whatsapp"></i>
-                    <h4>WhatsApp</h4>
-                    <p>01559950582</p>
-                    <a href="https://wa.me/201559950582" target="_blank" class="whatsapp-link">Message Me</a>
+        <!-- ===== CONTACT PRO (WITH FORMSPREE) ===== -->
+        <div class="contact-pro">
+            <h2><i class="fas fa-paper-plane"></i> <span id="contactTitle">Contact Me</span></h2>
+            <p style="color: #a8b2d9; margin-bottom: 2rem; font-size: 1rem;" id="contactSub">
+                Have a question or project? Contact me now and I'll get back to you soon
+            </p>
+
+            <div class="contact-pro-grid">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt" style="color: #8f73ff;"></i>
+                        <div>
+                            <h4>📍 Location</h4>
+                            <p>Egypt, Cairo</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope" style="color: #EA4335;"></i>
+                        <div>
+                            <h4>📧 Email</h4>
+                            <p>anashossam509@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt" style="color: #25D366;"></i>
+                        <div>
+                            <h4>📞 Phone / WhatsApp</h4>
+                            <p>01559950582</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock" style="color: #f39c12;"></i>
+                        <div>
+                            <h4>🕒 Working Hours</h4>
+                            <p>Sat - Thu: 10 AM - 10 PM</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="https://wa.me/201559950582" target="_blank" style="background: #25D366; color: white; padding: 0.5rem 1.2rem; border-radius: 40px; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: 0.3s;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="mailto:anashossam509@gmail.com" style="background: #EA4335; color: white; padding: 0.5rem 1.2rem; border-radius: 40px; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: 0.3s;"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="https://www.instagram.com/pry.vai" target="_blank" style="background: radial-gradient(circle at 30% 30%, #feda77, #d62976, #962fbf, #4f5bd5); color: white; padding: 0.5rem 1.2rem; border-radius: 40px; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: 0.3s;"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
                 </div>
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h4>Email</h4>
-                    <p>anashossam509@gmail.com</p>
-                    <a href="mailto:anashossam509@gmail.com" class="email-link">Send Email</a>
-                </div>
-                <div class="contact-card">
-                    <i class="fab fa-instagram"></i>
-                    <h4>Instagram</h4>
-                    <p>@pry.vai</p>
-                    <a href="https://www.instagram.com/pry.vai" target="_blank" class="insta-link">Follow Me</a>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <h4>Call</h4>
-                    <p>01559950582</p>
-                    <a href="tel:01559950582" class="call-link">Call Me</a>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="https://wa.me/201559950582" target="_blank" class="btn-cta">
-                    <i class="fab fa-whatsapp"></i> <span class="cta-text" id="ctaText">Hire Me Now</span>
-                </a>
+
+                <!-- ===== FORMPREE FORM ===== -->
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mbgrnopd" method="POST">
+                    <input type="hidden" name="_subject" value="New message from Portfolio">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required style="padding: 0.8rem 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); color: #d3d9f0; font-size: 0.95rem; outline: none; transition: 0.3s;">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required style="padding: 0.8rem 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); color: #d3d9f0; font-size: 0.95rem; outline: none; transition: 0.3s;">
+                    </div>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" style="padding: 0.8rem 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); color: #d3d9f0; font-size: 0.95rem; outline: none; transition: 0.3s; width: 100%; margin-top: 1rem;">
+                    <textarea id="message" name="message" rows="4" placeholder="Your Message..." required style="padding: 0.8rem 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); color: #d3d9f0; font-size: 0.95rem; outline: none; transition: 0.3s; width: 100%; margin-top: 1rem; resize: vertical;"></textarea>
+                    <button type="submit" style="margin-top: 1.2rem; padding: 0.9rem 2.5rem; background: linear-gradient(135deg, #6a4fe0, #8f73ff); color: white; border: none; border-radius: 40px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.3s; width: 100%;">🚀 Send Message</button>
+                    <div id="formStatus" style="margin-top: 1rem; text-align: center; font-weight: 600;"></div>
+                </form>
             </div>
         </div>
 
@@ -218,109 +331,360 @@
         </div>
 
     </div>
+    <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
 
     <script>
-        // ===== الترجمة بين العربي والإنجليزي =====
+        // ===== TRANSLATION (5 Languages) =====
         document.addEventListener('DOMContentLoaded', function() {
             const langToggle = document.getElementById('langToggle');
-            let isArabic = false;
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const langText = document.getElementById('langText');
+            let currentLang = 'en';
 
-            // النصوص الإنجليزية
-            const en = {
-                langText: 'العربية',
-                aboutTitle: 'About Me',
-                aboutText: "I'm a passionate web developer who loves creating beautiful, fast, and responsive websites. I use <strong>HTML & CSS</strong> to turn ideas into real digital experiences. My goal is to keep learning, build amazing projects, and grow as a freelancer.",
-                skillsTitle: 'My Skills',
-                servicesTitle: 'My Services',
-                service1Title: 'Web Design',
-                service1Desc: 'Modern, responsive websites for all devices',
-                service2Title: 'Website Updates',
-                service2Desc: 'Improve and update existing websites',
-                service3Title: 'Performance',
-                service3Desc: 'Speed optimization & better user experience',
-                projectsTitle: 'My Projects',
-                project1Name: 'RSM Company',
-                project1Desc: 'Glassmorphism design for a web dev agency',
-                project2Name: 'Portfolio',
-                project2Desc: 'Personal portfolio website',
-                project3Name: 'Mini Store',
-                project3Desc: 'Simple product page with clean design',
-                contactTitle: 'Contact Me',
-                ctaText: 'Hire Me Now',
-                footer: '© 2026 Anas Hossam · Built with ❤️'
+            const translations = {
+                ar: {
+                    name: '🇪🇬 العربية',
+                    aboutTitle: 'من أنا',
+                    aboutText: "أنا مطور ويب شغوف بحب إنشاء مواقع جميلة وسريعة ومتجاوبة. أستخدم <strong>HTML & CSS</strong> لتحويل الأفكار إلى تجارب رقمية حقيقية. هدفي هو الاستمرار في التعلم، وبناء مشاريع رائعة، والنمو كمطور حر.",
+                    skillsTitle: 'مهاراتي',
+                    servicesTitle: 'خدماتي',
+                    service1Title: 'تصميم مواقع',
+                    service1Desc: 'مواقع عصرية متجاوبة لكل الأجهزة',
+                    service2Title: 'تحديث المواقع',
+                    service2Desc: 'تطوير وتحسين المواقع الحالية',
+                    service3Title: 'تحسين الأداء',
+                    service3Desc: 'تسريع المواقع وتحسين تجربة المستخدم',
+                    projectsTitle: 'مشاريعي',
+                    project1Name: 'شركة RSM',
+                    project1Desc: 'تصميم Glassmorphism لشركة تطوير ويب',
+                    project2Name: 'معرض أعمال',
+                    project2Desc: 'موقع شخصي يعرض أعمالي',
+                    project3Name: 'متجر صغير',
+                    project3Desc: 'صفحة منتجات بتصميم نظيف',
+                    contactTitle: 'تواصل معي',
+                    contactSub: 'عندك سؤال أو مشروع؟ تواصل معي الآن وسأرد عليك في أقرب وقت',
+                    location: '📍 الموقع',
+                    locationVal: 'مصر، القاهرة',
+                    email: '📧 البريد الإلكتروني',
+                    emailVal: 'anashossam509@gmail.com',
+                    phone: '📞 الهاتف / واتساب',
+                    phoneVal: '01559950582',
+                    hours: '🕒 أوقات العمل',
+                    hoursVal: 'السبت - الخميس: 10 ص - 10 م',
+                    whatsapp: 'واتساب',
+                    instagram: 'إنستجرام',
+                    namePlace: 'الاسم',
+                    emailPlace: 'البريد الإلكتروني',
+                    subjectPlace: 'الموضوع',
+                    messagePlace: 'رسالتك...',
+                    sendBtn: '🚀 إرسال الرسالة',
+                    footer: '© 2026 أنس حسام · صنع بكل ❤️',
+                    direction: 'rtl'
+                },
+                en: {
+                    name: '🇬🇧 English',
+                    aboutTitle: 'About Me',
+                    aboutText: "I'm a passionate web developer who loves creating beautiful, fast, and responsive websites. I use <strong>HTML & CSS</strong> to turn ideas into real digital experiences. My goal is to keep learning, build amazing projects, and grow as a freelancer.",
+                    skillsTitle: 'My Skills',
+                    servicesTitle: 'My Services',
+                    service1Title: 'Web Design',
+                    service1Desc: 'Modern, responsive websites for all devices',
+                    service2Title: 'Website Updates',
+                    service2Desc: 'Improve and update existing websites',
+                    service3Title: 'Performance',
+                    service3Desc: 'Speed optimization & better user experience',
+                    projectsTitle: 'My Projects',
+                    project1Name: 'RSM Company',
+                    project1Desc: 'Glassmorphism design for a web dev agency',
+                    project2Name: 'Portfolio',
+                    project2Desc: 'Personal portfolio website',
+                    project3Name: 'Mini Store',
+                    project3Desc: 'Simple product page with clean design',
+                    contactTitle: 'Contact Me',
+                    contactSub: 'Have a question or project? Contact me now and I\'ll get back to you soon',
+                    location: '📍 Location',
+                    locationVal: 'Egypt, Cairo',
+                    email: '📧 Email',
+                    emailVal: 'anashossam509@gmail.com',
+                    phone: '📞 Phone / WhatsApp',
+                    phoneVal: '01559950582',
+                    hours: '🕒 Working Hours',
+                    hoursVal: 'Sat - Thu: 10 AM - 10 PM',
+                    whatsapp: 'WhatsApp',
+                    instagram: 'Instagram',
+                    namePlace: 'Your Name',
+                    emailPlace: 'Your Email',
+                    subjectPlace: 'Subject',
+                    messagePlace: 'Your Message...',
+                    sendBtn: '🚀 Send Message',
+                    footer: '© 2026 Anas Hossam · Built with ❤️',
+                    direction: 'ltr'
+                },
+                fr: {
+                    name: '🇫🇷 Français',
+                    aboutTitle: 'À propos de moi',
+                    aboutText: "Je suis un développeur web passionné qui aime créer des sites web beaux, rapides et responsives. J'utilise <strong>HTML & CSS</strong> pour transformer les idées en expériences numériques réelles.",
+                    skillsTitle: 'Mes compétences',
+                    servicesTitle: 'Mes services',
+                    service1Title: 'Conception web',
+                    service1Desc: 'Sites web modernes et responsives pour tous les appareils',
+                    service2Title: 'Mises à jour',
+                    service2Desc: 'Améliorer et mettre à jour les sites existants',
+                    service3Title: 'Performance',
+                    service3Desc: 'Optimisation de la vitesse et meilleure expérience utilisateur',
+                    projectsTitle: 'Mes projets',
+                    project1Name: 'Société RSM',
+                    project1Desc: 'Design Glassmorphism pour une agence web',
+                    project2Name: 'Portfolio',
+                    project2Desc: 'Site portfolio personnel',
+                    project3Name: 'Mini boutique',
+                    project3Desc: 'Page produit avec design épuré',
+                    contactTitle: 'Contactez-moi',
+                    contactSub: 'Une question ou un projet ? Contactez-moi maintenant et je vous répondrai rapidement',
+                    location: '📍 Lieu',
+                    locationVal: 'Égypte, Le Caire',
+                    email: '📧 E-mail',
+                    emailVal: 'anashossam509@gmail.com',
+                    phone: '📞 Téléphone / WhatsApp',
+                    phoneVal: '01559950582',
+                    hours: '🕒 Horaires',
+                    hoursVal: 'Sam - Jeu: 10h - 22h',
+                    whatsapp: 'WhatsApp',
+                    instagram: 'Instagram',
+                    namePlace: 'Votre nom',
+                    emailPlace: 'Votre email',
+                    subjectPlace: 'Sujet',
+                    messagePlace: 'Votre message...',
+                    sendBtn: '🚀 Envoyer',
+                    footer: '© 2026 Anas Hossam · Fait avec ❤️',
+                    direction: 'ltr'
+                },
+                de: {
+                    name: '🇩🇪 Deutsch',
+                    aboutTitle: 'Über mich',
+                    aboutText: "Ich bin ein leidenschaftlicher Webentwickler, der schöne, schnelle und responsive Websites erstellt. Ich verwende <strong>HTML & CSS</strong>, um Ideen in echte digitale Erlebnisse zu verwandeln.",
+                    skillsTitle: 'Meine Fähigkeiten',
+                    servicesTitle: 'Meine Dienstleistungen',
+                    service1Title: 'Webdesign',
+                    service1Desc: 'Moderne, responsive Websites für alle Geräte',
+                    service2Title: 'Website-Updates',
+                    service2Desc: 'Vorhandene Websites verbessern und aktualisieren',
+                    service3Title: 'Leistung',
+                    service3Desc: 'Geschwindigkeitsoptimierung & bessere Benutzererfahrung',
+                    projectsTitle: 'Meine Projekte',
+                    project1Name: 'RSM Unternehmen',
+                    project1Desc: 'Glassmorphism-Design für eine Webagentur',
+                    project2Name: 'Portfolio',
+                    project2Desc: 'Persönliche Portfolio-Website',
+                    project3Name: 'Ministore',
+                    project3Desc: 'Einfache Produktseite mit sauberem Design',
+                    contactTitle: 'Kontaktieren Sie mich',
+                    contactSub: 'Haben Sie eine Frage oder ein Projekt? Kontaktieren Sie mich jetzt und ich melde mich bald bei Ihnen.',
+                    location: '📍 Standort',
+                    locationVal: 'Ägypten, Kairo',
+                    email: '📧 E-Mail',
+                    emailVal: 'anashossam509@gmail.com',
+                    phone: '📞 Telefon / WhatsApp',
+                    phoneVal: '01559950582',
+                    hours: '🕒 Arbeitszeiten',
+                    hoursVal: 'Sa - Do: 10:00 - 22:00',
+                    whatsapp: 'WhatsApp',
+                    instagram: 'Instagram',
+                    namePlace: 'Ihr Name',
+                    emailPlace: 'Ihre E-Mail',
+                    subjectPlace: 'Betreff',
+                    messagePlace: 'Ihre Nachricht...',
+                    sendBtn: '🚀 Senden',
+                    footer: '© 2026 Anas Hossam · Mit ❤️ gemacht',
+                    direction: 'ltr'
+                },
+                es: {
+                    name: '🇪🇸 Español',
+                    aboutTitle: 'Sobre mí',
+                    aboutText: "Soy un desarrollador web apasionado que ama crear sitios web hermosos, rápidos y responsivos. Utilizo <strong>HTML & CSS</strong> para convertir ideas en experiencias digitales reales.",
+                    skillsTitle: 'Mis habilidades',
+                    servicesTitle: 'Mis servicios',
+                    service1Title: 'Diseño web',
+                    service1Desc: 'Sitios web modernos y responsivos para todos los dispositivos',
+                    service2Title: 'Actualizaciones',
+                    service2Desc: 'Mejorar y actualizar sitios web existentes',
+                    service3Title: 'Rendimiento',
+                    service3Desc: 'Optimización de velocidad y mejor experiencia de usuario',
+                    projectsTitle: 'Mis proyectos',
+                    project1Name: 'Empresa RSM',
+                    project1Desc: 'Diseño Glassmorphism para una agencia web',
+                    project2Name: 'Portfolio',
+                    project2Desc: 'Sitio web de portafolio personal',
+                    project3Name: 'Mini tienda',
+                    project3Desc: 'Página de producto con diseño limpio',
+                    contactTitle: 'Contáctame',
+                    contactSub: '¿Tienes una pregunta o proyecto? Contáctame ahora y te responderé pronto.',
+                    location: '📍 Ubicación',
+                    locationVal: 'Egipto, El Cairo',
+                    email: '📧 Correo',
+                    emailVal: 'anashossam509@gmail.com',
+                    phone: '📞 Teléfono / WhatsApp',
+                    phoneVal: '01559950582',
+                    hours: '🕒 Horario',
+                    hoursVal: 'Sáb - Jue: 10am - 10pm',
+                    whatsapp: 'WhatsApp',
+                    instagram: 'Instagram',
+                    namePlace: 'Tu nombre',
+                    emailPlace: 'Tu correo',
+                    subjectPlace: 'Asunto',
+                    messagePlace: 'Tu mensaje...',
+                    sendBtn: '🚀 Enviar',
+                    footer: '© 2026 Anas Hossam · Hecho con ❤️',
+                    direction: 'ltr'
+                }
             };
 
-            // النصوص العربية
-            const ar = {
-                langText: 'English',
-                aboutTitle: 'من أنا',
-                aboutText: "أنا مطور ويب شغوف بحب إنشاء مواقع جميلة وسريعة ومتجاوبة. أستخدم <strong>HTML & CSS</strong> لتحويل الأفكار إلى تجارب رقمية حقيقية. هدفي هو الاستمرار في التعلم، وبناء مشاريع رائعة، والنمو كمطور حر.",
-                skillsTitle: 'مهاراتي',
-                servicesTitle: 'خدماتي',
-                service1Title: 'تصميم مواقع',
-                service1Desc: 'مواقع عصرية متجاوبة لكل الأجهزة',
-                service2Title: 'تحديث المواقع',
-                service2Desc: 'تطوير وتحسين المواقع الحالية',
-                service3Title: 'تحسين الأداء',
-                service3Desc: 'تسريع المواقع وتحسين تجربة المستخدم',
-                projectsTitle: 'مشاريعي',
-                project1Name: 'شركة RSM',
-                project1Desc: 'تصميم Glassmorphism لشركة تطوير ويب',
-                project2Name: 'معرض أعمال',
-                project2Desc: 'موقع شخصي يعرض أعمالي',
-                project3Name: 'متجر صغير',
-                project3Desc: 'صفحة منتجات بتصميم نظيف',
-                contactTitle: 'تواصل معي',
-                ctaText: 'اطلب خدمتي الآن',
-                footer: '© 2026 أنس حسام · صنع بكل ❤️'
-            };
-
-            // دالة الترجمة
             function translate(lang) {
-                // تغيير نص الزر
-                document.getElementById('langText').textContent = lang.langText;
+                const t = translations[lang];
+                if (!t) return;
 
-                // تغيير اتجاه الصفحة
+                langText.textContent = t.name;
+
                 const container = document.querySelector('.container');
-                if (lang === ar) {
+                if (t.direction === 'rtl') {
                     container.classList.add('rtl');
                 } else {
                     container.classList.remove('rtl');
                 }
 
-                // تغيير كل النصوص باستخدام الـ ID
-                document.getElementById('aboutTitle').textContent = lang.aboutTitle;
-                document.getElementById('aboutText').innerHTML = lang.aboutText;
-                document.getElementById('skillsTitle').textContent = lang.skillsTitle;
-                document.getElementById('servicesTitle').textContent = lang.servicesTitle;
-                document.getElementById('service1Title').textContent = lang.service1Title;
-                document.getElementById('service1Desc').textContent = lang.service1Desc;
-                document.getElementById('service2Title').textContent = lang.service2Title;
-                document.getElementById('service2Desc').textContent = lang.service2Desc;
-                document.getElementById('service3Title').textContent = lang.service3Title;
-                document.getElementById('service3Desc').textContent = lang.service3Desc;
-                document.getElementById('projectsTitle').textContent = lang.projectsTitle;
-                document.getElementById('project1Name').textContent = lang.project1Name;
-                document.getElementById('project1Desc').textContent = lang.project1Desc;
-                document.getElementById('project2Name').textContent = lang.project2Name;
-                document.getElementById('project2Desc').textContent = lang.project2Desc;
-                document.getElementById('project3Name').textContent = lang.project3Name;
-                document.getElementById('project3Desc').textContent = lang.project3Desc;
-                document.getElementById('contactTitle').textContent = lang.contactTitle;
-                document.getElementById('ctaText').textContent = lang.ctaText;
-                document.getElementById('footerText').textContent = lang.footer;
+                document.getElementById('aboutTitle').textContent = t.aboutTitle;
+                document.getElementById('aboutText').innerHTML = t.aboutText;
+                document.getElementById('skillsTitle').textContent = t.skillsTitle;
+                document.getElementById('servicesTitle').textContent = t.servicesTitle;
+                document.getElementById('service1Title').textContent = t.service1Title;
+                document.getElementById('service1Desc').textContent = t.service1Desc;
+                document.getElementById('service2Title').textContent = t.service2Title;
+                document.getElementById('service2Desc').textContent = t.service2Desc;
+                document.getElementById('service3Title').textContent = t.service3Title;
+                document.getElementById('service3Desc').textContent = t.service3Desc;
+                document.getElementById('projectsTitle').textContent = t.projectsTitle;
+                document.getElementById('project1Name').textContent = t.project1Name;
+                document.getElementById('project1Desc').textContent = t.project1Desc;
+                document.getElementById('project2Name').textContent = t.project2Name;
+                document.getElementById('project2Desc').textContent = t.project2Desc;
+                document.getElementById('project3Name').textContent = t.project3Name;
+                document.getElementById('project3Desc').textContent = t.project3Desc;
+                
+                document.getElementById('contactTitle').textContent = t.contactTitle;
+                document.getElementById('contactSub').textContent = t.contactSub;
+                
+                // تحديث معلومات الاتصال
+                const infoItems = document.querySelectorAll('.info-item');
+                if (infoItems.length >= 4) {
+                    infoItems[0].querySelector('h4').textContent = t.location;
+                    infoItems[0].querySelector('p').textContent = t.locationVal;
+                    infoItems[1].querySelector('h4').textContent = t.email;
+                    infoItems[1].querySelector('p').textContent = t.emailVal;
+                    infoItems[2].querySelector('h4').textContent = t.phone;
+                    infoItems[2].querySelector('p').textContent = t.phoneVal;
+                    infoItems[3].querySelector('h4').textContent = t.hours;
+                    infoItems[3].querySelector('p').textContent = t.hoursVal;
+                }
+
+                // تحديث أزرار التواصل
+                const socialBtns = document.querySelectorAll('.contact-info > div:last-child a');
+                if (socialBtns.length >= 3) {
+                    socialBtns[0].textContent = t.whatsapp;
+                    socialBtns[0].innerHTML = `<i class="fab fa-whatsapp"></i> ${t.whatsapp}`;
+                    socialBtns[2].textContent = t.instagram;
+                    socialBtns[2].innerHTML = `<i class="fab fa-instagram"></i> ${t.instagram}`;
+                }
+
+                // تحديث الفورم
+                document.getElementById('name').placeholder = t.namePlace;
+                document.getElementById('email').placeholder = t.emailPlace;
+                document.getElementById('subject').placeholder = t.subjectPlace;
+                document.getElementById('message').placeholder = t.messagePlace;
+                document.querySelector('.contact-form button').innerHTML = t.sendBtn;
+
+                document.getElementById('footerText').textContent = t.footer;
+
+                currentLang = lang;
+
+                document.querySelectorAll('.dropdown-content a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.lang === lang) {
+                        link.classList.add('active');
+                    }
+                });
             }
 
-            // عند الضغط على الزر
-            langToggle.addEventListener('click', function() {
-                isArabic = !isArabic;
-                const lang = isArabic ? ar : en;
-                translate(lang);
+            // فتح/غلق القائمة
+            langToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
             });
 
-            // تشغيل الترجمة الأولية (إنجليزي)
-            translate(en);
+            // اختيار لغة
+            document.querySelectorAll('.dropdown-content a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.dataset.lang;
+                    translate(lang);
+                    dropdownMenu.classList.remove('show');
+                });
+            });
+
+            // إغلاق القائمة عند الضغط خارجها
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('show');
+            });
+
+            // ===== CONTACT FORM - FORMPREE =====
+            const form = document.getElementById('contactForm');
+            const status = document.getElementById('formStatus');
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    // منع الإرسال العادي عشان نتحكم في الرسالة
+                    e.preventDefault();
+
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const message = document.getElementById('message').value.trim();
+
+                    if (!name || !email || !message) {
+                        status.textContent = '⚠️ Please fill in all required fields.';
+                        status.style.color = '#f39c12';
+                        return;
+                    }
+
+                    status.textContent = '⏳ Sending...';
+                    status.style.color = '#8f73ff';
+
+                    // إرسال البيانات إلى Formspree باستخدام fetch
+                    const formData = new FormData(form);
+                    
+                    fetch('https://formspree.io/f/mbgrnopd', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            status.innerHTML = '✅ Message sent successfully! I\'ll get back to you soon.';
+                            status.style.color = '#2ecc71';
+                            form.reset();
+                        } else {
+                            status.textContent = '❌ Oops! Something went wrong. Please try again.';
+                            status.style.color = '#e74c3c';
+                        }
+                    }).catch(error => {
+                        status.textContent = '❌ Network error. Please check your connection.';
+                        status.style.color = '#e74c3c';
+                    });
+                });
+            }
+
+            // الترجمة الأولية (إنجليزي)
+            translate('en');
         });
     </script>
 

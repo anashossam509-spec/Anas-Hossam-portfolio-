@@ -642,3 +642,125 @@ body {
     right: auto;
     left: 0;
 }
+
+/* ===== EXTRA RESPONSIVE FIXES ===== */
+
+/* تابلت */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* موبايل */
+@media (max-width: 600px) {
+    .card {
+        padding: 1.2rem 1rem;
+        border-radius: 24px;
+    }
+    .header h1 {
+        font-size: 2rem;
+    }
+    .header .subtitle {
+        font-size: 0.95rem;
+    }
+    .header .badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 1.2rem;
+    }
+    .about p {
+        font-size: 0.95rem;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+    .skill-item {
+        padding: 0.6rem 0.8rem;
+    }
+    .skill-item .skill-name {
+        font-size: 0.8rem;
+    }
+    .certificate {
+        padding: 0.8rem 1rem;
+    }
+    .certificate-content {
+        gap: 0.6rem;
+    }
+    .cert-icon {
+        font-size: 1.8rem;
+    }
+    .certificate h3 {
+        font-size: 0.9rem;
+    }
+    .certificate p {
+        font-size: 0.8rem;
+    }
+    .contact-info, .contact-form {
+        padding: 1.2rem;
+    }
+    .contact-info .info-item {
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    .contact-info .info-item i {
+        font-size: 1rem;
+        min-width: 1.5rem;
+    }
+    .contact-info .info-item h4 {
+        font-size: 0.8rem;
+    }
+    .contact-info .info-item p {
+        font-size: 0.8rem;
+    }
+    .contact-info .social-links a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+    }
+    .contact-form input, .contact-form textarea {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    .contact-form button {
+        font-size: 0.85rem;
+        padding: 0.7rem;
+    }
+    .footer {
+        font-size: 0.7rem;
+    }
+    .lang-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+    .dropdown-content {
+        min-width: 140px;
+    }
+    .dropdown-content a {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* موبايل صغير جداً */
+@media (max-width: 400px) {
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+    .skill-item {
+        padding: 0.5rem 0.6rem;
+    }
+    .skill-item .skill-name {
+        font-size: 0.75rem;
+    }
+}

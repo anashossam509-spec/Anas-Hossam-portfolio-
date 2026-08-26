@@ -359,3 +359,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== اللغة الافتراضية: الإنجليزية =====
     translate('en');
 });
+// ===== THEME TOGGLE =====
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle.querySelector('i');
+
+// التحقق من الثيم المخزن
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    themeIcon.classList.replace('fa-moon', 'fa-sun');
+}
+
+// تبديل الثيم عند الضغط
+themeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('light-theme');
+    
+    // تغيير الأيقونة
+    if (document.body.classList.contains('light-theme')) {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'light');
+    } else {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'dark');
+    }
+});

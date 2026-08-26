@@ -1,3 +1,4 @@
+/* ===== RESET & BASE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -6,33 +7,36 @@
 }
 
 body {
-    background: #0a0c15;
-    min-height: 100vh;
-    padding: 2rem 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+    margin: 0;
+    background: #0a0c15;
 }
 
 .container {
-    max-width: 1000px;
     width: 100%;
-    margin: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .card {
+    padding: 2.5rem 2.2rem;
+    border-radius: 36px;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
-    border-radius: 40px;
-    padding: 2.8rem 2.8rem;
     border: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
 }
 
+/* ===== LANGUAGE TOGGLE ===== */
 .lang-toggle {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .lang-dropdown {
@@ -100,6 +104,7 @@ body {
     color: #a78bfa;
 }
 
+/* ===== HEADER ===== */
 .header {
     text-align: center;
     margin-bottom: 3rem;
@@ -137,6 +142,7 @@ body {
     margin-top: 1rem;
 }
 
+/* ===== ABOUT ===== */
 .about {
     background: rgba(255, 255, 255, 0.02);
     border-radius: 24px;
@@ -164,6 +170,7 @@ body {
     font-weight: 300;
 }
 
+/* ===== SKILLS ===== */
 .skills {
     margin-bottom: 2.5rem;
 }
@@ -207,6 +214,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* ===== CERTIFICATE ===== */
 .certificate {
     margin-top: 1.5rem;
     background: rgba(167, 139, 250, 0.06);
@@ -238,6 +246,7 @@ body {
     font-weight: 300;
 }
 
+/* ===== SERVICES ===== */
 .services {
     margin-bottom: 2.5rem;
 }
@@ -294,6 +303,7 @@ body {
     font-weight: 300;
 }
 
+/* ===== PROJECTS ===== */
 .projects {
     margin-bottom: 2.5rem;
 }
@@ -372,6 +382,7 @@ body {
     font-weight: 500;
 }
 
+/* ===== CONTACT ===== */
 .contact {
     margin-bottom: 1.5rem;
 }
@@ -471,6 +482,7 @@ body {
     background: radial-gradient(circle at 30% 30%, #feda77, #d62976, #962fbf, #4f5bd5);
 }
 
+/* ===== CONTACT FORM ===== */
 .contact-form {
     background: rgba(255, 255, 255, 0.02);
     padding: 1.8rem;
@@ -539,6 +551,7 @@ body {
     font-size: 0.85rem;
 }
 
+/* ===== DIVIDER ===== */
 .divider {
     display: flex;
     align-items: center;
@@ -553,12 +566,24 @@ body {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
 }
 
+/* ===== FOOTER ===== */
 .footer {
     text-align: center;
     color: #475569;
     font-size: 0.8rem;
     margin-top: 1rem;
     font-weight: 300;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -574,12 +599,7 @@ body {
     }
     .skills-grid {
         grid-template-columns: 1fr 1fr;
-    }
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    .contact-form .form-row {
-        grid-template-columns: 1fr;
+        gap: 0.8rem;
     }
     .services-grid {
         grid-template-columns: 1fr;
@@ -587,40 +607,126 @@ body {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    body {
+        padding: 0.8rem;
+    }
     .card {
         padding: 1.2rem 1rem;
-        border-radius: 20px;
+        border-radius: 24px;
+    }
+    .container {
+        padding: 0;
     }
     .header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        text-align: center;
     }
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .header .subtitle {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+    .header .badge {
+        font-size: 0.75rem;
+        display: inline-block;
+        margin: 0 auto;
     }
     .about {
         padding: 1.2rem;
     }
     .about p {
         font-size: 0.95rem;
+        text-align: start;
     }
-    .contact-info,
-    .contact-form {
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+    .skill-item {
+        padding: 0.6rem 0.8rem;
+        text-align: center;
+    }
+    .skill-item .skill-name {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    .contact-info, .contact-form {
         padding: 1.2rem;
     }
     .certificate {
-        padding: 1rem;
+        padding: 0.8rem 1rem;
     }
     .certificate-content {
         gap: 0.6rem;
+        justify-content: center;
     }
     .cert-icon {
         font-size: 1.8rem;
     }
+    .certificate h3 {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .certificate p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .footer {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+    .lang-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+    .dropdown-content {
+        min-width: 140px;
+    }
+    .dropdown-content a {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
 }
 
+@media (max-width: 400px) {
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+    .skill-item {
+        padding: 0.4rem 0.5rem;
+    }
+    .skill-item .skill-name {
+        font-size: 0.7rem;
+    }
+    .card {
+        padding: 1rem 0.8rem;
+    }
+}
+
+/* ===== RTL ===== */
 .rtl {
     direction: rtl;
 }
@@ -641,126 +747,4 @@ body {
 .rtl .dropdown-content {
     right: auto;
     left: 0;
-}
-
-/* ===== EXTRA RESPONSIVE FIXES ===== */
-
-/* تابلت */
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    .contact-form .form-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* موبايل */
-@media (max-width: 600px) {
-    .card {
-        padding: 1.2rem 1rem;
-        border-radius: 24px;
-    }
-    .header h1 {
-        font-size: 2rem;
-    }
-    .header .subtitle {
-        font-size: 0.95rem;
-    }
-    .header .badge {
-        font-size: 0.75rem;
-        padding: 0.3rem 1.2rem;
-    }
-    .about p {
-        font-size: 0.95rem;
-    }
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    .skills-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.8rem;
-    }
-    .skill-item {
-        padding: 0.6rem 0.8rem;
-    }
-    .skill-item .skill-name {
-        font-size: 0.8rem;
-    }
-    .certificate {
-        padding: 0.8rem 1rem;
-    }
-    .certificate-content {
-        gap: 0.6rem;
-    }
-    .cert-icon {
-        font-size: 1.8rem;
-    }
-    .certificate h3 {
-        font-size: 0.9rem;
-    }
-    .certificate p {
-        font-size: 0.8rem;
-    }
-    .contact-info, .contact-form {
-        padding: 1.2rem;
-    }
-    .contact-info .info-item {
-        gap: 0.8rem;
-        margin-bottom: 1rem;
-    }
-    .contact-info .info-item i {
-        font-size: 1rem;
-        min-width: 1.5rem;
-    }
-    .contact-info .info-item h4 {
-        font-size: 0.8rem;
-    }
-    .contact-info .info-item p {
-        font-size: 0.8rem;
-    }
-    .contact-info .social-links a {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.7rem;
-    }
-    .contact-form input, .contact-form textarea {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.85rem;
-    }
-    .contact-form button {
-        font-size: 0.85rem;
-        padding: 0.7rem;
-    }
-    .footer {
-        font-size: 0.7rem;
-    }
-    .lang-btn {
-        font-size: 0.75rem;
-        padding: 0.4rem 1rem;
-    }
-    .dropdown-content {
-        min-width: 140px;
-    }
-    .dropdown-content a {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
-    }
-}
-
-/* موبايل صغير جداً */
-@media (max-width: 400px) {
-    .skills-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
-    }
-    .skill-item {
-        padding: 0.5rem 0.6rem;
-    }
-    .skill-item .skill-name {
-        font-size: 0.75rem;
-    }
 }
